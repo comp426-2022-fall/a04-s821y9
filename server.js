@@ -22,7 +22,7 @@ app.get('/app/', (req, res) => {
 });
 
 app.get('/app/roll/', (req, res) => {
-  res.status(200).send(roll(sides, dice, rolls)));
+  res.status(200).send(roll(sides, dice, rolls));
 });
 
 
