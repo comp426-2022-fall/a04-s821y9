@@ -9,9 +9,9 @@ const args = minimist(process.argv.slice(2));
 const port = args.port || 5000;
 
 
-//let sides = 6;
-//let dice = 2;
-//let rolls = 1;
+let sides = 6;
+let dice = 2;
+let rolls = 1;
 
 
 app.use(express.json());
@@ -22,10 +22,10 @@ app.get('/app/', (req, res) => {
 });
 
 app.get('/app/roll/', (req, res) => {
-  let sides = 6 || parseInt(req.body.sides);
-  let dice = 2 || parseInt(req.body.sides);
-  let rolls = 1 || parseInt(req.body.sides);
-  res.status(200).send(roll(sides, dice, rolls));
+	sides = 6 || parseInt(req.body.sides);
+	dice = 2 || parseInt(req.body.sides);
+	rolls = 1 || parseInt(req.body.sides);
+	res.status(200).send(roll(sides, dice, rolls));
 });
 
 app.post('/app/roll', (req,res,next) => {
@@ -36,27 +36,27 @@ app.post('/app/roll', (req,res,next) => {
 });
 
 app.get('/app/roll/:sides/', (req, res) => {
-  let sides = parseInt(req.params.sides)
-  res.status(200).send(roll(sides, 2, 1));
+	let sides = parseInt(req.params.sides)
+	res.status(200).send(roll(sides, 2, 1));
 });
 
 app.get('/app/roll/:sides/:dice/', (req, res) => {
-  let sides = parseInt(req.params.sides)
-  let dice = parseInt(req.params.dice)
-  res.status(200).send(roll(sides, dice, 1));
+	let sides = parseInt(req.params.sides)
+	let dice = parseInt(req.params.dice)
+	res.status(200).send(roll(sides, dice, 1));
 });
 
 app.get('/app/roll/:sides/:dice/:rolls/', (req, res) => {
-  let sides = parseInt(req.params.sides)
-  let dice = parseInt(req.params.dice)
-  let rolls = parseInt(req.params.rolls)
-  res.status(200).send(roll(sides, dice, rolls));
+	let sides = parseInt(req.params.sides)
+	let dice = parseInt(req.params.dice)
+	let rolls = parseInt(req.params.rolls)
+	res.status(200).send(roll(sides, dice, rolls));
 });
 
 app.get('*', (req, res) => {
-  res.status(404).send('404 NOT FOUND');
+	res.status(404).send('404 NOT FOUND');
 });
 
 app.listen(port, () => {
-  console.log(port);
+	console.log(port);
 });
