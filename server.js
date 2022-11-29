@@ -22,9 +22,9 @@ app.get('/app/', (req, res) => {
 });
 
 app.get('/app/roll/', (req, res) => {
-  sides = 6 || parseInt(req.body.sides);
-  dice = 2 || parseInt(req.body.sides);
-  rolls = 1 || parseInt(req.body.sides);
+  let sides = 6 || parseInt(req.body.sides);
+  let dice = 2 || parseInt(req.body.sides);
+  let rolls = 1 || parseInt(req.body.sides);
   res.status(200).send(roll(sides, dice, rolls));
 });
 
