@@ -9,9 +9,9 @@ const args = minimist(process.argv.slice(2));
 const port = args.port || 5000;
 
 
-let sides = 6;
-let dice = 2;
-let rolls = 1;
+//let sides = 6;
+//let dice = 2;
+//let rolls = 1;
 
 
 app.use(express.json());
